@@ -6,16 +6,17 @@ Hash tables are data structures that efficently implements sets and dictionaries
 # Analogy
 Let's take an example of a library. A hash table bucket is like a rack in a library. Let's consider each shelf of the rack has books arranged in alphabetical order from top to bottom. The top shelf has all the books starting from A, and then the next shelf has all the books starting from B and so on. Now, if we want to look for a book titled 'Brooklyn,' we will first locate where B is, and then we will linearly start looking at the names of each book on that shelf until we find the book with the name box. <br>
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/library.gif" width="200" height="200" />
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 Here, the rack is an entire hash table, and each shelf is a bucket. Key is the book name, and value is the whole book that we wanted as a result. In hash tables as well, we have a certain number of buckets that hold a certain number of key-value pairs in them. So, whenever we want to look for a specific value, we provide its key to look where the value lies.
 
 # Hashtable Visualization
 
 Considering a hashtable with hash key as first letter of element. This is how string would be stored in a hashtable:
 
-<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/visualization.png" width="200" height="200" />
+<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/visualization.png" width="300" height="450" />
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-We will use one example each to demonstrate where hash tables are effective and where it is not.
+## Examples to demonstrate where hash tables are effective and where it is not.
 
 # Installing Libraries
 1. pip install lolviz
@@ -96,9 +97,10 @@ Hash function to search an elements from hash table which returns true if elemen
       return False
 ```
 # Comparison
+Clearly hashtables are much faster!
 
-
-<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/comparison.png" width="200" height="200" />
+<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/comparison.png" width="400" height="250" />
+<br><br><br><br><br><br><br><br><br><br>
 
 
 
@@ -122,5 +124,7 @@ def hashfunction(str):
     return len(str)
 ```
 Now if all elements of string have same length they will all end up in single bucket like:
-<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/single%20bucket.png" width="200" height="200" />
+<img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/single%20bucket.png" width="500" height="200" />
+<br><br><br><br><br><br><br><br><br><br>
 And this will make hashtables useless because it is even worse then linear search because it is like linear search with added complexity.
+
