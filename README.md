@@ -20,7 +20,7 @@ We will use one example each to demonstrate where hash tables are effective or w
 
 
 lsearch is the name of the function and A is the list and x is the target search element
-
+```python
     def lsearch(A, search_element):
 
       #Looping through list to find the element x
@@ -78,3 +78,4 @@ lsearch is the name of the function and A is the list and x is the target search
           return True
 				
       return False
+```
