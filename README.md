@@ -19,7 +19,7 @@ We will use one example each to demonstrate where hash tables are effective or w
 # Linear Search Function
 
 
-lsearch is the name of the function and A is the list and x is the target search element
+lsearch is the name of the function and A is the list and x is the target search element. The function returns true when the element is found.
 ```python
     def lsearch(A, search_element):
 
@@ -44,7 +44,7 @@ lsearch is the name of the function and A is the list and x is the target search
     def hash(x):
       return x % 1000
 ```
-# Make sure each bucket is a separate list
+# Initializing and filling buckets 
 Initializing empty buckets and filling array values
 ```python
     buckets = [[] for i in range(1000)] 
@@ -66,8 +66,8 @@ Filling buckets with array elements
 		
       buckets[index] = values
 ```
-# Hash search Function which returns true if element is present
-Hash function to search an elements from hash table
+# Hash search Function
+Hash function to search an elements from hash table which returns true if element is found
 ```python
     def hsearch(hashtable, search_element):
 
