@@ -36,18 +36,21 @@ lsearch is the name of the function and A is the list and x is the target search
         return True 
 			
       return False
+ ```
   
  # Creating a hash function 
-
+ Hash function to calculate index of buckets of size 1000
+```python
     def hash(x):
       return x % 1000
-
+```
 # Make sure each bucket is a separate list
-
+Initializing empty buckets and filling array values
+```python
     buckets = [[] for i in range(1000)] 
-
+    
 # Filling up buckets
-
+Filling buckets with array elements
 
     for a in A:
 
@@ -62,9 +65,10 @@ lsearch is the name of the function and A is the list and x is the target search
       values.append(a)
 		
       buckets[index] = values
-
+```
 # Hash search Function which returns true if element is present
-
+Hash function to search an elements from hash table
+```python
     def hsearch(hashtable, search_element):
 
       index = hash(search_element)
