@@ -15,85 +15,71 @@ Considering a hashtable with the hash key as the first letter of the element, th
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/visualization.png" width="300" height="450" />
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## Examples to demonstrate where hash tables are effective and where it is not.
+# Prerequisites
 
-# Installing Libraries
+## Installing Libraries
 1. pip install lolviz
 2. pip install numpy
 3. pip install pandas
 
-# Importing libraries
+## Importing libraries
 
 1. from lolviz import *
 2. import numpy as np
 3. import pandas as pd
 
-# Linear Search Function
+# Examples to demonstrate where hash tables are effective and where it is not.
+
+## Linear Search Function
 
 
 lsearch is the function's name, A is the list, and x is the target search element. The function returns true when the element is found.
 ```python
-    def lsearch(A, search_element):
-
-      #Looping through list to find the element x
-	
-      for row in A:
-	
-      # Condition if any element in A 
+def lsearch(A, search_element):
+	#Looping through list to find the element x
+	for row in A:
+	# Condition if any element in A 
+	if row == search_element:
+		# The function returns True that means, search element is present in the list_A
+		return True
 		
-       if row == search_element:
-		
-        # The function returns True that means, search element is present in the list_A
-			
-        return True 
-			
-      return False
+	return False
  ```
   
-# Creating a hash function 
+## Creating a hash function 
  Hash function to calculate the index of buckets of size 1000
 ```python
-    def hash(x):
-      return x % 1000
+def hash(x):
+	return x % 1000
 ```
-# Initializing and filling buckets 
+## Initializing and filling buckets 
 Initializing empty buckets and filling array values
 ```python
-    buckets = [[] for i in range(1000)] 
-    
-# Filling up buckets
-Filling buckets with array elements
+buckets = [[] for i in range(1000)] 
 
-    for a in A:
-
-      index = hash(a)
-		
-      values = buckets[index]
-		
-      if (values == None):
-		
-        values = []
-			
-      values.append(a)
-		
-      buckets[index] = values
+#Filling buckets with array elements
+for a in A:
+	index = hash(a)
+	values = buckets[index]
+	
+	if (values == None):
+		values = []
+	
+	values.append(a)
+	buckets[index] = values
 ```
-# Hash search Function
+## Hash search Function
 Hash function to search an element from the hash table, which returns true if the element is found
 ```python
-    def hsearch(hashtable, search_element):
-
-      index = hash(search_element)
-		
-      values = hashtable[index]
-		
-      for value in values:
-		
-        if (value == search_element):
-			
-          return True
-				
-      return False
+def hsearch(hashtable, search_element):
+	index = hash(search_element)
+	values = hashtable[index]
+	
+	for value in values:
+		if (value == search_element):
+			return True
+	
+	return False
 ```
 # Comparison
 Clearly, hashtables are much faster!
