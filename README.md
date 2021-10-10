@@ -10,7 +10,7 @@ Here, the rack is an entire hash table, and each shelf is a bucket. Key is the b
 
 # Hashtable Visualization
 
-Considering a hashtable with the hash key as the first letter of the element, this is how a strings would be stored in a hashtable
+Considering a hashtable with the hash key as the first letter of the element, this is how the strings would be stored in a hashtable
 
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/visualization.png" width="300" height="450" />
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
