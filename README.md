@@ -1,7 +1,6 @@
 # Introduction-to-Hashtables
-Basic introduction and implementation of Hashtables
 
-Hash tables are data structures that efficently implements sets and dictionaries in python. It is generally used for searching a particular element in millions of files or large datasets. It consists of a hash function which basically converts any value (list, sets, integer etc.) to a numeric value. This numeric value in hash table signifies a particular bucket where those elements in datasets are inserted that satisfy the hash function.
+Hash tables are data structures that efficiently implement sets and dictionaries in python. It is generally used for searching a particular element in millions of files or large datasets. It consists of a hash function that converts any value (list, sets, integer, etc.) to a numeric value. This numeric value is the index of a hash table where the corresponding values are stored.
 
 # Analogy
 Let's take an example of a library. A hash table bucket is like a rack in a library. Let's consider each shelf of the rack has books arranged in alphabetical order from top to bottom. The top shelf has all the books starting from A, and then the next shelf has all the books starting from B and so on. Now, if we want to look for a book titled 'Apple,' we will first locate where A is, and then we will linearly start looking at the names of each book on that shelf until we find the book with the name Apple. <br>
@@ -11,7 +10,7 @@ Here, the rack is an entire hash table, and each shelf is a bucket. Key is the b
 
 # Hashtable Visualization
 
-Considering a hashtable with hash key as first letter of element. This is how string would be stored in a hashtable:
+Considering a hashtable with the hash key as the first letter of the element, this is how a string would be stored in a hashtable
 
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/visualization.png" width="300" height="450" />
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -32,7 +31,7 @@ Considering a hashtable with hash key as first letter of element. This is how st
 # Linear Search Function
 
 
-lsearch is the name of the function and A is the list and x is the target search element. The function returns true when the element is found.
+lsearch is the function's name, A is the list, and x is the target search element. The function returns true when the element is found.
 ```python
     def lsearch(A, search_element):
 
@@ -52,7 +51,7 @@ lsearch is the name of the function and A is the list and x is the target search
  ```
   
 # Creating a hash function 
- Hash function to calculate index of buckets of size 1000
+ Hash function to calculate the index of buckets of size 1000
 ```python
     def hash(x):
       return x % 1000
@@ -80,7 +79,7 @@ Filling buckets with array elements
       buckets[index] = values
 ```
 # Hash search Function
-Hash function to search an elements from hash table which returns true if element is found
+Hash function to search an element from the hash table, which returns true if the element is found
 ```python
     def hsearch(hashtable, search_element):
 
@@ -97,7 +96,7 @@ Hash function to search an elements from hash table which returns true if elemen
       return False
 ```
 # Comparison
-Clearly hashtables are much faster!
+Clearly, hashtables are much faster!
 
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/comparison.png" width="400" height="250" />
 <br><br><br><br><br><br><br><br><br><br>
@@ -106,7 +105,7 @@ Clearly hashtables are much faster!
 
 # The Trade-off
 
-Complexity for Time
+Traded off Complexity for Time
 
 *   Linear Search : 
         • Lesser Complexity
@@ -118,13 +117,16 @@ Complexity for Time
 
 # Be careful with Hash functions
 
-Sometimes you might end up creating a hash function that will end up putting all elements in single bucket, once such example is:
+Sometimes you might create a hash function that will end up putting all elements in a single bucket. One such example is:
 ```python
 def hashfunction(str):
     return len(str)
 ```
-Now if all elements of string have same length they will all end up in single bucket like:
+Now, if all elements of string have the same length, they will all end up in a single bucket like:
 <img align = 'left' src="https://github.com/karishmachauhan/Introduction-to-Hashtables/blob/main/Images/single%20bucket.png" width="500" height="200" />
 <br><br><br><br><br><br><br><br><br><br>
-And this will make hashtables useless because it is even worse then linear search because it is like linear search with added complexity.
+And this will make hashtables useless because it is even worse than a linear search. After all, it is like a linear search with added complexity.
 
+# Summary
+
+When we need to look through a huge corpus of data, a hash table is our best friend. However, you have to be careful if your data set is small or your hash function puts most or all of the data in a single bucket because you might end up increasing complexity without really getting the benefit of reduced execution time.
